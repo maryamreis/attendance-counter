@@ -9,19 +9,15 @@ export default function CopyrightNotice({
   year,
 }: CopyrightNoticeProps): JSX.Element {
   // truthiness check: https://developer.mozilla.org/en-US/docs/Glossary/Truthy
-  if (author) {
-    return (
-      <>
-        <p>
-          Copyright {year}, {author}
-        </p>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <p>Copyright {year} (but to nobody in particular)</p>
-      </>
-    );
-  }
+  return(
+    <>
+      <p>
+        Copuright {year} <b>{author ? {author} : '(but to nobody in particular)'}</b>
+        // Copyright {year} (but to nobody in particular)
+        // {author && <p>, {author}</p>}
+      </p>
+    </>
+  )
+  
+  
 }
